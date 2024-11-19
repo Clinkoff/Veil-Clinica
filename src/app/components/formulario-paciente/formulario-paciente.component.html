@@ -1,0 +1,71 @@
+<div class="min-h-screen py-6 flex flex-col justify-center sm:py-12">
+  <div class="relative py-3 sm:max-w-md sm:mx-auto">
+    <div class="relative px-4 py-8 bg-white shadow rounded-lg sm:p-8">
+      <div class="max-w-md mx-auto">
+        <div class="flex items-center space-x-4 mb-6">
+          <div class="h-12 w-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-mono">i</div>
+          <div>
+            <h2 class="text-xl font-semibold text-gray-700">Cadastro de pacientes</h2>
+            <p class="text-sm text-gray-500">Preencha os dados do paciente</p>
+          </div>
+        </div>
+        <form [formGroup]="pacienteForm" (ngSubmit)="submit()" #formDit="ngForm" class="space-y-4">
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Nome Completo</label>
+              <input type="text" formControlName="nome" placeholder="Nome completo" required
+                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">CPF</label>
+              <input type="text" formControlName="cpf" placeholder="CPF" required
+                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Telefone</label>
+              <input type="tel" formControlName="telefone" placeholder="Telefone" required
+                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Observações</label>
+              <textarea formControlName="observacoes" rows="3" placeholder="Observações"
+                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Gênero Biológico</label>
+              <select formControlName="generoBiologico" required
+                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                <option value="">Selecione o gênero</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Data de aniversário</label>
+              <input type="date" formControlName="dataAniversario" required
+                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Data do registro</label>
+              <input type="datetime-local" formControlName="dataRegistro" required
+                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Última atualização</label>
+              <input type="datetime-local" formControlName="dataAtualizacao" required
+                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+          </div>
+          <div class="pt-4 flex items-center space-x-4">
+            <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+              Cadastrar Paciente
+            </button>
+            <button [routerLink]="['/']" class="w-full bg-gray-400 text-white px-4 py-2 rounded-md hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
+              Voltar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
